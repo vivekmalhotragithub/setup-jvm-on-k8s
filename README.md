@@ -1,0 +1,1 @@
+This repo is used for testing how jvm is initialized in kubernetes

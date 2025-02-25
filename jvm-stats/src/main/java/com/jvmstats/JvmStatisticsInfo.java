@@ -1,5 +1,9 @@
-import java.lang.management.ManagementFactory;
+package com.jvmstats;
+
+import io.javalin.Javalin;
+
 import java.lang.management.GarbageCollectorMXBean;
+import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
 import java.lang.management.MemoryUsage;
 import java.util.List;
@@ -21,5 +25,9 @@ public class JvmStatisticsInfo {
         MemoryUsage heapMemoryUsage = memoryMXBean.getHeapMemoryUsage();
         long maxHeap = heapMemoryUsage.getMax() / (1024 * 1024); // Convert bytes to MB
         System.out.println("Total Heap Memory (Max): " + maxHeap + " MB");
+
+        Javalin.create()
+                .get("/running", ctx -> ctx.result("Hello World"))
+                .start(8081);
     }
 }

@@ -1,0 +1,6 @@
+{
+    "container-runtime": "crio",
+    "cpus": "5",
+    "driver": "podman",
+    "memory": "5000"
+}
